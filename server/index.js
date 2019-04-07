@@ -2,6 +2,8 @@ const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
+const test1 = require('./test1')
+const test2 = require('./test2')
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
@@ -32,3 +34,6 @@ async function start() {
   })
 }
 start()
+app.use('/api/test1', test1)
+app.use('/api/test2', test2)
+
